@@ -448,6 +448,13 @@ open class Traverson {
       
       return self
     }
+      
+    @discardableResult
+    open func modifiedJsonHal() -> Traversing {
+      self.linkResolver = TraversonModifiedJsonHalLinkResolver()
+      
+      return self
+    }
     
     @discardableResult
     open func withHeaders(_ headers: [String: String]) -> Traversing {
